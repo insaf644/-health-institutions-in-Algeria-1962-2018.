@@ -1,0 +1,595 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadre juridique des établissements publics de santé</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f8f5ef;
+            color: #2f2924;
+            line-height: 1.7;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(47, 41, 36, 0.96);
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #e0c49a;
+            font-size: 21px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d7b77c;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            background:
+                linear-gradient(rgba(47,41,36,0.75), rgba(47,41,36,0.75)),
+                url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero small {
+            color: #e0c49a;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 70px);
+            line-height: 1.15;
+            margin: 25px 0;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 19px;
+            color: #eee;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 13px 30px;
+            border: 1px solid #d7b77c;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #d7b77c;
+            color: #2f2924;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: #a9824c;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 10px;
+        }
+
+        /* INTRO */
+        .intro {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 28px;
+            border-radius: 8px;
+            border: 1px solid #e5ddd2;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(47,41,36,0.10);
+        }
+
+        .card .number {
+            color: #a9824c;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            margin: 12px 0;
+            font-size: 22px;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            max-width: 900px;
+            margin: auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #c8a976;
+        }
+
+        .timeline-item {
+            width: 50%;
+            padding: 20px 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e5ddd2;
+        }
+
+        .timeline-content h3 {
+            color: #8c693d;
+            margin-bottom: 8px;
+        }
+
+        /* LEGAL */
+        .legal {
+            background: #302a25;
+            color: white;
+        }
+
+        .legal .section-title h2 {
+            color: white;
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .legal-box {
+            border: 1px solid #806945;
+            padding: 30px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .legal-box h3 {
+            color: #dfc18e;
+            margin-bottom: 12px;
+        }
+
+        /* REFERENCES */
+        .references {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .references li {
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #211d1a;
+            color: #ddd;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer strong {
+            color: #d7b77c;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even),
+            .timeline-item:nth-child(odd) {
+                width: 100%;
+                left: 0;
+                text-align: left;
+                padding-left: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">SANTÉ • DROIT</div>
+
+    <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#definition">Définition</a></li>
+        <li><a href="#historique">Historique</a></li>
+        <li><a href="#cadre">Cadre juridique</a></li>
+        <li><a href="#references">Références</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+
+    <div class="hero-content">
+
+        <small>Projet universitaire • Droit médical</small>
+
+        <h1>
+            Cadre juridique des établissements publics de santé
+        </h1>
+
+        <p>
+            Étude du concept, de l'évolution historique et des réformes
+            du cadre juridique des établissements publics de santé en Algérie.
+        </p>
+
+        <a href="#definition" class="button">
+            Découvrir l'étude
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- INTRODUCTION -->
+<section id="definition">
+
+    <div class="section-title">
+        <span>01 — Introduction</span>
+        <h2>Comprendre les établissements publics de santé</h2>
+    </div>
+
+    <div class="intro">
+
+        <p>
+            Les établissements publics de santé occupent une place essentielle
+            dans l'organisation du système sanitaire algérien. Leur fonctionnement
+            est encadré par un ensemble de règles juridiques qui déterminent
+            leur organisation, leurs missions, leur gestion et leurs relations
+            avec les différents acteurs du secteur de la santé.
+        </p>
+
+        <br>
+
+        <p>
+            L'étude de leur cadre juridique permet ainsi de comprendre
+            l'évolution de l'organisation sanitaire en Algérie ainsi que
+            les différentes réformes intervenues depuis l'indépendance.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONCEPTS -->
+<section>
+
+    <div class="section-title">
+        <span>02 — Concepts fondamentaux</span>
+        <h2>Les éléments essentiels</h2>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="number">01</div>
+            <h3>Définition</h3>
+            <p>
+                Les établissements publics de santé sont des structures
+                destinées à assurer des missions de service public sanitaire.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">02</div>
+            <h3>Mission</h3>
+            <p>
+                Ils participent notamment à la prévention, aux soins,
+                au diagnostic et à la prise en charge des patients.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">03</div>
+            <h3>Organisation</h3>
+            <p>
+                Leur organisation repose sur des règles relatives à
+                l'administration, la gestion et le fonctionnement des services.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">04</div>
+            <h3>Service public</h3>
+            <p>
+                Leur activité s'inscrit dans le cadre des principes
+                fondamentaux du service public de santé.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HISTORIQUE -->
+<section id="historique">
+
+    <div class="section-title">
+        <span>03 — Évolution</span>
+        <h2>Évolution historique et juridique</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>1962 – 1965</h3>
+                <p>
+                    La période suivant l'indépendance est marquée par la
+                    réorganisation progressive du système sanitaire algérien.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>1965 – 1979</h3>
+                <p>
+                    L'État renforce progressivement son rôle dans
+                    l'organisation et la gestion du secteur de la santé.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>1979 – 2007</h3>
+                <p>
+                    Cette période connaît plusieurs évolutions institutionnelles
+                    et réglementaires visant à améliorer l'organisation sanitaire.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>2007 – 2018</h3>
+                <p>
+                    De nouvelles réformes viennent moderniser le fonctionnement
+                    des établissements publics de santé et leur cadre juridique.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CADRE JURIDIQUE -->
+<section class="legal" id="cadre">
+
+    <div class="section-title">
+        <span>04 — Droit</span>
+        <h2>Le cadre juridique</h2>
+    </div>
+
+    <div class="legal-grid">
+
+        <div class="legal-box">
+            <h3>Organisation</h3>
+            <p>
+                Les textes juridiques définissent la structure,
+                les organes et les modalités de fonctionnement
+                des établissements publics de santé.
+            </p>
+        </div>
+
+        <div class="legal-box">
+            <h3>Gestion</h3>
+            <p>
+                La gestion administrative et financière est soumise
+                à des règles spécifiques liées au caractère public
+                de ces établissements.
+            </p>
+        </div>
+
+        <div class="legal-box">
+            <h3>Personnel</h3>
+            <p>
+                Le statut et les obligations des professionnels
+                participant au fonctionnement des établissements
+                sont également encadrés juridiquement.
+            </p>
+        </div>
+
+        <div class="legal-box">
+            <h3>Responsabilité</h3>
+            <p>
+                Les établissements et les professionnels de santé
+                peuvent être soumis à différentes formes de responsabilité
+                selon les circonstances.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REFERENCES -->
+<section id="references">
+
+    <div class="section-title">
+        <span>05 — Documentation</span>
+        <h2>Références juridiques</h2>
+    </div>
+
+    <div class="references">
+
+        <ol>
+            <li>
+                Constitution de la République algérienne démocratique et populaire.
+            </li>
+
+            <li>
+                Textes législatifs et réglementaires relatifs à la santé.
+            </li>
+
+            <li>
+                Textes portant organisation et fonctionnement
+                des établissements publics de santé.
+            </li>
+
+            <li>
+                Publications et documents officiels du ministère de la Santé.
+            </li>
+        </ol>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        Projet universitaire — <strong>Droit médical</strong>
+    </p>
+
+    <p>
+        Cadre juridique des établissements publics de santé
+    </p>
+
+</footer>
+
+
+</body>
+</html>
+```
