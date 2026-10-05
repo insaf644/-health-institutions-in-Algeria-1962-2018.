@@ -2,590 +2,1151 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cadre juridique des établissements publics de santé</title>
+<title>La santé publique en Algérie | 1962–2018</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
-        html {
-            scroll-behavior: smooth;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #f8f5ef;
-            color: #2f2924;
-            line-height: 1.7;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        /* NAVBAR */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(47, 41, 36, 0.96);
-            padding: 15px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+body{
+    font-family:'DM Sans',sans-serif;
+    background:#f5f1e8;
+    color:#29251f;
+    line-height:1.7;
+}
 
-        .logo {
-            color: #e0c49a;
-            font-size: 21px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+:root{
+    --brown:#332820;
+    --dark:#201b17;
+    --gold:#b4935a;
+    --cream:#f5f1e8;
+    --white:#fffdf8;
+    --muted:#756d63;
+    --border:#ded5c7;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+/* NAVIGATION */
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(32,27,23,.94);
+    backdrop-filter:blur(12px);
+}
 
-        nav a:hover {
-            color: #d7b77c;
-        }
+.logo{
+    font-family:'Playfair Display',serif;
+    color:#e5ca98;
+    font-size:20px;
+    letter-spacing:2px;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 100px 20px 60px;
-            background:
-                linear-gradient(rgba(47,41,36,0.75), rgba(47,41,36,0.75)),
-                url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80")
-                center/cover;
-            color: white;
-        }
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
 
-        .hero-content {
-            max-width: 900px;
-        }
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:13px;
+    transition:.3s;
+}
 
-        .hero small {
-            color: #e0c49a;
-            font-size: 16px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
+nav a:hover{
+    color:#d9bd88;
+}
 
-        .hero h1 {
-            font-size: clamp(38px, 6vw, 70px);
-            line-height: 1.15;
-            margin: 25px 0;
-        }
+/* HERO */
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 19px;
-            color: #eee;
-        }
+.hero{
+    min-height:100vh;
+    padding:150px 8% 80px;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(90deg,rgba(28,23,19,.96),rgba(28,23,19,.65)),
+    url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+    color:white;
+}
 
-        .button {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 13px 30px;
-            border: 1px solid #d7b77c;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+.hero-content{
+    max-width:1050px;
+}
 
-        .button:hover {
-            background: #d7b77c;
-            color: #2f2924;
-        }
+.tag{
+    color:#d8bd89;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:600;
+}
 
-        /* GENERAL */
-        section {
-            padding: 90px 8%;
-        }
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(45px,7vw,88px);
+    line-height:1.05;
+    margin:25px 0;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 55px;
-        }
+.hero h1 span{
+    color:#d8bd89;
+}
 
-        .section-title span {
-            color: #a9824c;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 13px;
-        }
+.hero p{
+    max-width:750px;
+    color:#ddd5cb;
+    font-size:19px;
+}
 
-        .section-title h2 {
-            font-size: 38px;
-            margin-top: 10px;
-        }
+.hero-buttons{
+    margin-top:40px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-        /* INTRO */
-        .intro {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            font-size: 18px;
-        }
+.btn{
+    padding:14px 27px;
+    text-decoration:none;
+    border:1px solid #d8bd89;
+    color:white;
+    transition:.3s;
+}
 
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
+.btn.primary{
+    background:#b4935a;
+    color:#201b17;
+}
 
-        .card {
-            background: white;
-            padding: 35px 28px;
-            border-radius: 8px;
-            border: 1px solid #e5ddd2;
-            transition: 0.3s;
-        }
+.btn:hover{
+    transform:translateY(-3px);
+}
 
-        .card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 15px 35px rgba(47,41,36,0.10);
-        }
+/* SECTIONS */
 
-        .card .number {
-            color: #a9824c;
-            font-size: 30px;
-            font-weight: bold;
-        }
+section{
+    padding:100px 8%;
+}
 
-        .card h3 {
-            margin: 12px 0;
-            font-size: 22px;
-        }
+.section-header{
+    max-width:800px;
+    margin-bottom:55px;
+}
 
-        /* TIMELINE */
-        .timeline {
-            max-width: 900px;
-            margin: auto;
-            position: relative;
-        }
+.section-label{
+    color:var(--gold);
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-weight:bold;
+}
 
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #c8a976;
-        }
+.section-header h2{
+    font-family:'Playfair Display',serif;
+    font-size:46px;
+    line-height:1.2;
+    margin-top:10px;
+}
 
-        .timeline-item {
-            width: 50%;
-            padding: 20px 40px;
-            position: relative;
-        }
+.section-header p{
+    margin-top:18px;
+    color:var(--muted);
+}
 
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            text-align: right;
-        }
+/* INTRO */
 
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
+.intro-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+    align-items:center;
+}
 
-        .timeline-content {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #e5ddd2;
-        }
+.intro-text{
+    font-size:18px;
+}
 
-        .timeline-content h3 {
-            color: #8c693d;
-            margin-bottom: 8px;
-        }
+.question{
+    border-left:4px solid var(--gold);
+    padding:30px;
+    background:white;
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+}
 
-        /* LEGAL */
-        .legal {
-            background: #302a25;
-            color: white;
-        }
+/* STATS */
 
-        .legal .section-title h2 {
-            color: white;
-        }
+.stats{
+    background:var(--brown);
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:55px 8%;
+}
 
-        .legal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
+.stat{
+    text-align:center;
+    padding:20px;
+}
 
-        .legal-box {
-            border: 1px solid #806945;
-            padding: 30px;
-            background: rgba(255,255,255,0.03);
-        }
+.stat strong{
+    display:block;
+    color:#d9bd88;
+    font-family:'Playfair Display',serif;
+    font-size:45px;
+}
 
-        .legal-box h3 {
-            color: #dfc18e;
-            margin-bottom: 12px;
-        }
+.stat span{
+    color:#d2cbc2;
+    font-size:13px;
+}
 
-        /* REFERENCES */
-        .references {
-            max-width: 850px;
-            margin: auto;
-        }
+/* TIMELINE */
 
-        .references li {
-            margin-bottom: 15px;
-            padding-left: 5px;
-        }
+.timeline{
+    position:relative;
+    max-width:1100px;
+    margin:auto;
+}
 
-        /* FOOTER */
-        footer {
-            background: #211d1a;
-            color: #ddd;
-            text-align: center;
-            padding: 35px 20px;
-        }
+.timeline:before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:var(--gold);
+}
 
-        footer strong {
-            color: #d7b77c;
-        }
+.event{
+    width:50%;
+    padding:25px 45px;
+    position:relative;
+}
 
-        /* MOBILE */
-        @media (max-width: 700px) {
+.event:nth-child(odd){
+    left:0;
+    text-align:right;
+}
 
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
+.event:nth-child(even){
+    left:50%;
+}
 
-            nav ul {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+.event-card{
+    background:white;
+    padding:30px;
+    border:1px solid var(--border);
+    box-shadow:0 15px 40px rgba(40,30,20,.06);
+    transition:.3s;
+}
 
-            nav a {
-                font-size: 12px;
-            }
+.event-card:hover{
+    transform:translateY(-6px);
+}
 
-            .hero h1 {
-                font-size: 40px;
-            }
+.year{
+    color:var(--gold);
+    font-family:'Playfair Display',serif;
+    font-size:30px;
+    font-weight:bold;
+}
 
-            .hero p {
-                font-size: 16px;
-            }
+.event-card h3{
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    margin:8px 0;
+}
 
-            .timeline::before {
-                left: 10px;
-            }
+/* LEGAL */
 
-            .timeline-item,
-            .timeline-item:nth-child(even),
-            .timeline-item:nth-child(odd) {
-                width: 100%;
-                left: 0;
-                text-align: left;
-                padding-left: 35px;
-            }
-        }
-    </style>
+.legal-section{
+    background:#211c18;
+    color:white;
+}
+
+.legal-section .section-header p{
+    color:#cfc5bb;
+}
+
+.legal-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.legal-card{
+    padding:35px;
+    border:1px solid #69583e;
+    background:rgba(255,255,255,.035);
+    transition:.3s;
+}
+
+.legal-card:hover{
+    transform:translateY(-8px);
+    border-color:#d4b879;
+}
+
+.legal-card .icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.legal-card h3{
+    color:#dfc58f;
+    font-family:'Playfair Display',serif;
+    font-size:23px;
+}
+
+.legal-card .date{
+    color:#a9a096;
+    font-size:12px;
+    margin:8px 0 18px;
+}
+
+.legal-card p{
+    color:#d9d1c8;
+}
+
+.legal-link{
+    display:inline-block;
+    margin-top:20px;
+    color:#dfc58f;
+    text-decoration:none;
+    border-bottom:1px solid #dfc58f;
+}
+
+/* ARTICLES */
+
+.article-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.article{
+    background:white;
+    border:1px solid var(--border);
+    padding:35px;
+}
+
+.article h3{
+    font-family:'Playfair Display',serif;
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+.article p{
+    color:var(--muted);
+}
+
+/* VIDEO */
+
+.video-section{
+    background:#e8e0d3;
+}
+
+.video-wrapper{
+    max-width:1000px;
+    margin:auto;
+    background:#1c1815;
+    padding:12px;
+    box-shadow:0 25px 70px rgba(30,25,20,.2);
+}
+
+.video-wrapper video{
+    width:100%;
+    display:block;
+    min-height:450px;
+    background:#111;
+}
+
+.video-note{
+    text-align:center;
+    color:var(--muted);
+    margin-top:20px;
+}
+
+/* SOURCES */
+
+.sources{
+    max-width:950px;
+    margin:auto;
+}
+
+.source{
+    background:white;
+    padding:25px 30px;
+    margin-bottom:15px;
+    border-left:4px solid var(--gold);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.source h3{
+    font-family:'Playfair Display',serif;
+}
+
+.source a{
+    color:#8b6a35;
+    font-weight:bold;
+    text-decoration:none;
+    white-space:nowrap;
+}
+
+/* PROJECT */
+
+.project{
+    background:var(--brown);
+    color:white;
+    text-align:center;
+}
+
+.project h2{
+    font-family:'Playfair Display',serif;
+    font-size:45px;
+}
+
+.project p{
+    max-width:700px;
+    margin:20px auto;
+    color:#ddd3c9;
+}
+
+.members{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
+}
+
+.member{
+    border:1px solid #806b49;
+    padding:13px 22px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#15120f;
+    color:#aaa;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer strong{
+    color:#d8bd89;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    nav{
+        padding:15px;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav ul{
+        gap:10px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .intro-grid,
+    .article-grid{
+        grid-template-columns:1fr;
+    }
+
+    .legal-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .timeline:before{
+        left:10px;
+    }
+
+    .event,
+    .event:nth-child(even),
+    .event:nth-child(odd){
+        width:100%;
+        left:0;
+        text-align:left;
+        padding-left:40px;
+    }
+
+    .video-wrapper video{
+        min-height:250px;
+    }
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:70px 6%;
+    }
+
+    .hero{
+        padding-left:6%;
+        padding-right:6%;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .section-header h2{
+        font-size:36px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
-<nav>
-    <div class="logo">SANTÉ • DROIT</div>
 
-    <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#definition">Définition</a></li>
-        <li><a href="#historique">Historique</a></li>
-        <li><a href="#cadre">Cadre juridique</a></li>
-        <li><a href="#references">Références</a></li>
-    </ul>
+<nav>
+
+<div class="logo">SANTÉ • DROIT</div>
+
+<ul>
+<li><a href="#accueil">Accueil</a></li>
+<li><a href="#problematique">Problématique</a></li>
+<li><a href="#histoire">Chronologie</a></li>
+<li><a href="#textes">Textes juridiques</a></li>
+<li><a href="#video">Documentaire</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+
 </nav>
 
 
 <!-- HERO -->
+
 <section class="hero" id="accueil">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <small>Projet universitaire • Droit médical</small>
+<div class="tag">
+Projet universitaire • Droit médical
+</div>
 
-        <h1>
-            Cadre juridique des établissements publics de santé
-        </h1>
+<h1>
+La construction du
+<span>cadre juridique</span>
+de la santé publique en Algérie
+</h1>
 
-        <p>
-            Étude du concept, de l'évolution historique et des réformes
-            du cadre juridique des établissements publics de santé en Algérie.
-        </p>
+<p>
+De l'indépendance à la réforme sanitaire de 2018,
+une lecture juridique et historique de l'évolution
+des établissements publics de santé en Algérie.
+</p>
 
-        <a href="#definition" class="button">
-            Découvrir l'étude
-        </a>
+<div class="hero-buttons">
 
-    </div>
+<a href="#histoire" class="btn primary">
+Explorer la chronologie
+</a>
+
+<a href="#textes" class="btn">
+Bibliothèque juridique
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- INTRODUCTION -->
-<section id="definition">
 
-    <div class="section-title">
-        <span>01 — Introduction</span>
-        <h2>Comprendre les établissements publics de santé</h2>
-    </div>
+<section id="problematique">
 
-    <div class="intro">
+<div class="section-header">
 
-        <p>
-            Les établissements publics de santé occupent une place essentielle
-            dans l'organisation du système sanitaire algérien. Leur fonctionnement
-            est encadré par un ensemble de règles juridiques qui déterminent
-            leur organisation, leurs missions, leur gestion et leurs relations
-            avec les différents acteurs du secteur de la santé.
-        </p>
+<div class="section-label">01 — Introduction</div>
 
-        <br>
+<h2>
+Pourquoi étudier l'évolution juridique des établissements de santé ?
+</h2>
 
-        <p>
-            L'étude de leur cadre juridique permet ainsi de comprendre
-            l'évolution de l'organisation sanitaire en Algérie ainsi que
-            les différentes réformes intervenues depuis l'indépendance.
-        </p>
+<p>
+Le système de santé algérien n'est pas resté figé depuis 1962.
+Son organisation a progressivement été transformée par les
+politiques publiques et par plusieurs textes législatifs et réglementaires.
+</p>
 
-    </div>
+</div>
+
+<div class="intro-grid">
+
+<div class="intro-text">
+
+<p>
+Les établissements publics de santé constituent un élément essentiel
+du service public sanitaire. Leur organisation dépend d'un ensemble
+de règles relatives à leurs missions, leur fonctionnement,
+leur administration et leur financement.
+</p>
+
+<br>
+
+<p>
+L'évolution de ces règles permet de comprendre les transformations
+du système sanitaire algérien et le rôle progressivement attribué
+à l'État dans la protection et la promotion de la santé.
+</p>
+
+</div>
+
+<div class="question">
+
+« Comment le cadre juridique des établissements publics
+de santé a-t-il évolué en Algérie depuis l'indépendance ? »
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- CONCEPTS -->
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="stat">
+<strong>1962</strong>
+<span>Indépendance</span>
+</div>
+
+<div class="stat">
+<strong>1985</strong>
+<span>Loi relative à la santé</span>
+</div>
+
+<div class="stat">
+<strong>2007</strong>
+<span>EPH & EPSP</span>
+</div>
+
+<div class="stat">
+<strong>2018</strong>
+<span>Loi relative à la santé</span>
+</div>
+
+</div>
+
+
+<!-- TIMELINE -->
+
+<section id="histoire">
+
+<div class="section-header">
+
+<div class="section-label">02 — Évolution historique</div>
+
+<h2>1962 → 2018</h2>
+
+<p>
+Une chronologie pour comprendre les grandes transformations
+du système sanitaire algérien.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="event">
+
+<div class="event-card">
+
+<div class="year">1962</div>
+
+<h3>L'après-indépendance</h3>
+
+<p>
+L'Algérie indépendante doit reconstruire et réorganiser
+un système sanitaire profondément marqué par la période coloniale.
+L'État commence à structurer progressivement une politique
+nationale de santé.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="event">
+
+<div class="event-card">
+
+<div class="year">1974</div>
+
+<h3>La gratuité des soins</h3>
+
+<p>
+La politique sanitaire connaît une transformation majeure
+avec la mise en œuvre de la gratuité des soins dans
+les structures publiques de santé.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="event">
+
+<div class="event-card">
+
+<div class="year">1985</div>
+
+<h3>Loi n°85-05</h3>
+
+<p>
+La loi du 16 février 1985 constitue un texte majeur relatif
+à la protection et à la promotion de la santé.
+Elle structure juridiquement plusieurs dimensions
+du système sanitaire.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="event">
+
+<div class="event-card">
+
+<div class="year">2007</div>
+
+<h3>EPH & EPSP</h3>
+
+<p>
+Le décret exécutif n°07-140 du 19 mai 2007 fixe
+les règles de création, d'organisation et de fonctionnement
+des établissements publics hospitaliers et des établissements
+publics de santé de proximité.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="event">
+
+<div class="event-card">
+
+<div class="year">2018</div>
+
+<h3>Loi n°18-11</h3>
+
+<p>
+La loi n°18-11 du 2 juillet 2018 relative à la santé
+renouvelle le cadre législatif général du secteur sanitaire
+algérien.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LEGAL LIBRARY -->
+
+<section class="legal-section" id="textes">
+
+<div class="section-header">
+
+<div class="section-label">03 — Bibliothèque juridique</div>
+
+<h2>Les textes fondamentaux</h2>
+
+<p>
+Les principaux textes qui permettent de suivre la construction
+du cadre juridique de la santé publique.
+</p>
+
+</div>
+
+
+<div class="legal-grid">
+
+
+<div class="legal-card">
+
+<div class="icon">⚖️</div>
+
+<h3>Loi n°85-05</h3>
+
+<div class="date">16 février 1985</div>
+
+<p>
+Relative à la protection et à la promotion de la santé.
+Elle constitue un texte central de l'organisation juridique
+du secteur sanitaire algérien.
+</p>
+
+<a
+class="legal-link"
+href="https://www.joradp.dz/FTP/Jo-Francais/1985/F1985008.pdf"
+target="_blank">
+Consulter la source officielle →
+</a>
+
+</div>
+
+
+<div class="legal-card">
+
+<div class="icon">🏥</div>
+
+<h3>Décret exécutif n°07-140</h3>
+
+<div class="date">19 mai 2007</div>
+
+<p>
+Texte relatif à la création, l'organisation et le fonctionnement
+des établissements publics hospitaliers et des établissements
+publics de santé de proximité.
+</p>
+
+<a
+class="legal-link"
+href="https://www.joradp.dz/JRN/ZF2007.htm"
+target="_blank">
+Journal officiel →
+</a>
+
+</div>
+
+
+<div class="legal-card">
+
+<div class="icon">📜</div>
+
+<h3>Loi n°18-11</h3>
+
+<div class="date">2 juillet 2018</div>
+
+<p>
+Relative à la santé. Elle constitue le nouveau cadre législatif
+général du système sanitaire algérien.
+</p>
+
+<a
+class="legal-link"
+href="https://www.joradp.dz/FTP/jo-francais/2018/F2018046.pdf"
+target="_blank">
+Lire le texte officiel →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ANALYSIS -->
+
 <section>
 
-    <div class="section-title">
-        <span>02 — Concepts fondamentaux</span>
-        <h2>Les éléments essentiels</h2>
-    </div>
+<div class="section-header">
 
-    <div class="cards">
+<div class="section-label">04 — Analyse</div>
 
-        <div class="card">
-            <div class="number">01</div>
-            <h3>Définition</h3>
-            <p>
-                Les établissements publics de santé sont des structures
-                destinées à assurer des missions de service public sanitaire.
-            </p>
-        </div>
+<h2>Comprendre les réformes</h2>
 
-        <div class="card">
-            <div class="number">02</div>
-            <h3>Mission</h3>
-            <p>
-                Ils participent notamment à la prévention, aux soins,
-                au diagnostic et à la prise en charge des patients.
-            </p>
-        </div>
+<p>
+Au-delà des dates et des textes, l'évolution juridique répond
+à des transformations institutionnelles, sociales et sanitaires.
+</p>
 
-        <div class="card">
-            <div class="number">03</div>
-            <h3>Organisation</h3>
-            <p>
-                Leur organisation repose sur des règles relatives à
-                l'administration, la gestion et le fonctionnement des services.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="number">04</div>
-            <h3>Service public</h3>
-            <p>
-                Leur activité s'inscrit dans le cadre des principes
-                fondamentaux du service public de santé.
-            </p>
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 
-<!-- HISTORIQUE -->
-<section id="historique">
+<div class="article-grid">
 
-    <div class="section-title">
-        <span>03 — Évolution</span>
-        <h2>Évolution historique et juridique</h2>
-    </div>
+<div class="article">
 
-    <div class="timeline">
+<h3>Facteurs internes</h3>
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h3>1962 – 1965</h3>
-                <p>
-                    La période suivant l'indépendance est marquée par la
-                    réorganisation progressive du système sanitaire algérien.
-                </p>
-            </div>
-        </div>
+<p>
+L'évolution démographique, l'augmentation des besoins de santé,
+les transformations administratives, l'organisation territoriale
+et les besoins en infrastructures constituent des facteurs
+susceptibles d'influencer l'évolution du système sanitaire.
+</p>
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h3>1965 – 1979</h3>
-                <p>
-                    L'État renforce progressivement son rôle dans
-                    l'organisation et la gestion du secteur de la santé.
-                </p>
-            </div>
-        </div>
+</div>
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h3>1979 – 2007</h3>
-                <p>
-                    Cette période connaît plusieurs évolutions institutionnelles
-                    et réglementaires visant à améliorer l'organisation sanitaire.
-                </p>
-            </div>
-        </div>
 
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <h3>2007 – 2018</h3>
-                <p>
-                    De nouvelles réformes viennent moderniser le fonctionnement
-                    des établissements publics de santé et leur cadre juridique.
-                </p>
-            </div>
-        </div>
+<div class="article">
 
-    </div>
+<h3>Facteurs externes</h3>
+
+<p>
+Les évolutions des politiques publiques, les transformations
+économiques, les standards internationaux et l'évolution
+des conceptions contemporaines du droit à la santé peuvent
+également participer à la transformation du cadre juridique.
+</p>
+
+</div>
+
+
+<div class="article">
+
+<h3>Une logique de réforme</h3>
+
+<p>
+Le passage d'un ensemble de textes successifs vers un cadre
+législatif plus global traduit une volonté d'adapter
+l'organisation sanitaire aux nouvelles exigences du service
+public de santé.
+</p>
+
+</div>
+
+
+<div class="article">
+
+<h3>Le rôle de l'établissement public</h3>
+
+<p>
+L'établissement public de santé constitue l'un des instruments
+institutionnels à travers lesquels l'État assure ses missions
+dans le domaine sanitaire.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- CADRE JURIDIQUE -->
-<section class="legal" id="cadre">
+<!-- VIDEO -->
 
-    <div class="section-title">
-        <span>04 — Droit</span>
-        <h2>Le cadre juridique</h2>
-    </div>
+<section class="video-section" id="video">
 
-    <div class="legal-grid">
+<div class="section-header">
 
-        <div class="legal-box">
-            <h3>Organisation</h3>
-            <p>
-                Les textes juridiques définissent la structure,
-                les organes et les modalités de fonctionnement
-                des établissements publics de santé.
-            </p>
-        </div>
+<div class="section-label">05 — Documentaire</div>
 
-        <div class="legal-box">
-            <h3>Gestion</h3>
-            <p>
-                La gestion administrative et financière est soumise
-                à des règles spécifiques liées au caractère public
-                de ces établissements.
-            </p>
-        </div>
+<h2>1962 → 2018 : l'histoire en 3 minutes</h2>
 
-        <div class="legal-box">
-            <h3>Personnel</h3>
-            <p>
-                Le statut et les obligations des professionnels
-                participant au fonctionnement des établissements
-                sont également encadrés juridiquement.
-            </p>
-        </div>
+<p>
+Un documentaire audiovisuel consacré à l'évolution
+du cadre juridique de la santé publique en Algérie.
+</p>
 
-        <div class="legal-box">
-            <h3>Responsabilité</h3>
-            <p>
-                Les établissements et les professionnels de santé
-                peuvent être soumis à différentes formes de responsabilité
-                selon les circonstances.
-            </p>
-        </div>
+</div>
 
-    </div>
+
+<div class="video-wrapper">
+
+<video controls poster="images/video-cover.jpg">
+
+<source src="video/documentaire.mp4" type="video/mp4">
+
+Votre navigateur ne prend pas en charge la lecture vidéo.
+
+</video>
+
+</div>
+
+<p class="video-note">
+Le documentaire sera intégré ici dans le dossier
+<strong>video/documentaire.mp4</strong>.
+</p>
 
 </section>
 
 
-<!-- REFERENCES -->
-<section id="references">
+<!-- SOURCES -->
 
-    <div class="section-title">
-        <span>05 — Documentation</span>
-        <h2>Références juridiques</h2>
-    </div>
+<section id="sources">
 
-    <div class="references">
+<div class="section-header">
 
-        <ol>
-            <li>
-                Constitution de la République algérienne démocratique et populaire.
-            </li>
+<div class="section-label">06 — Références</div>
 
-            <li>
-                Textes législatifs et réglementaires relatifs à la santé.
-            </li>
+<h2>Sources juridiques</h2>
 
-            <li>
-                Textes portant organisation et fonctionnement
-                des établissements publics de santé.
-            </li>
+<p>
+Les sources utilisées pour l'étude doivent être vérifiées
+directement dans les publications officielles.
+</p>
 
-            <li>
-                Publications et documents officiels du ministère de la Santé.
-            </li>
-        </ol>
+</div>
 
-    </div>
+
+<div class="sources">
+
+
+<div class="source">
+
+<div>
+
+<h3>Journal Officiel de la République Algérienne</h3>
+
+<p>Base officielle des textes législatifs et réglementaires.</p>
+
+</div>
+
+<a
+href="https://www.joradp.dz/"
+target="_blank">
+Source officielle →
+</a>
+
+</div>
+
+
+<div class="source">
+
+<div>
+
+<h3>Loi n°85-05 du 16 février 1985</h3>
+
+<p>Protection et promotion de la santé.</p>
+
+</div>
+
+<a
+href="https://www.joradp.dz/FTP/Jo-Francais/1985/F1985008.pdf"
+target="_blank">
+PDF →
+</a>
+
+</div>
+
+
+<div class="source">
+
+<div>
+
+<h3>Loi n°18-11 du 2 juillet 2018</h3>
+
+<p>Relative à la santé — Journal officiel n°46.</p>
+
+</div>
+
+<a
+href="https://www.joradp.dz/FTP/jo-francais/2018/F2018046.pdf"
+target="_blank">
+PDF →
+</a>
+
+</div>
+
+
+<div class="source">
+
+<div>
+
+<h3>Recherche juridique officielle</h3>
+
+<p>Recherche dans les textes publiés au Journal officiel.</p>
+
+</div>
+
+<a
+href="https://www.joradp.dz/SCRIPTS/JOA_Div.dll/RecGet"
+target="_blank">
+Rechercher →
+</a>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- PROJECT -->
+
+<section class="project">
+
+<div class="section-label">07 — Projet universitaire</div>
+
+<h2>Une recherche. Une histoire. Un droit.</h2>
+
+<p>
+Projet consacré à l'étude du cadre juridique des établissements
+publics de santé en Algérie, de l'indépendance à la réforme
+législative de 2018.
+</p>
+
+<div class="members">
+
+<div class="member">Master Droit médical</div>
+
+<div class="member">Université d'Oran 2</div>
+
+<div class="member">Année universitaire 2026–2027</div>
+
+</div>
+
+</section>
+
+
 <footer>
 
-    <p>
-        Projet universitaire — <strong>Droit médical</strong>
-    </p>
+<p>
+© 2026 — Projet universitaire —
+<strong>Cadre juridique des établissements publics de santé</strong>
+</p>
 
-    <p>
-        Cadre juridique des établissements publics de santé
-    </p>
+<p>
+Réalisé dans le cadre du Master Droit médical
+</p>
 
 </footer>
 
@@ -593,3 +1154,4 @@
 </body>
 </html>
 ```
+
